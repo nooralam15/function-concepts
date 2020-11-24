@@ -1,25 +1,19 @@
 // function concept excersises
 
 
-//functions that converts percentgrade to letter grade
-function letterGrade(number) {
-    if (number >=0 && number <=49) {
-        return console.log("F")
+//functions that gives a ticekt based on user speed and sped limit
+function determineTicket(speed, limit) {
+    if (speed - limit == 0 || speed - limit < 0) {
+        return "No ticket"
     }
-    else if (number <= 59) {
-        return console.log("D")
-    }
-    else if (number <= 69) {
-        return console.log("C")
-    }
-    else if (number <= 79) {
-        return console.log("B")
+    else if (speed - limit > 0 && speed - limit <= limit + 20) {
+        return "Small Ticket"
     }
     else {
-        return console.log("A")
+        return "Big Ticket"
     }
 }
 
-console.log("A grade of 99% is a letter grade of " + letterGrade(99) + ".");
-console.log("A grade of 75% is a letter grade of " + letterGrade(75) + ".");
-console.log("A grade of 40% is a letter grade of " + letterGrade(40) + ".");
+console.log("Going 80 km/h in a 60 km/h zone results in: " + determineTicket(80, 60) + ".");
+console.log("Going 70 km/h in a 30 km/h zone results in: " + determineTicket(70, 30) + ".");
+console.log("Going 50 km/h in a 50 km/h zone results in: " + determineTicket(50, 50) + ".");
